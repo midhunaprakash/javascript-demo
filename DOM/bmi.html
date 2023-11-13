@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .calculator-container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff; /* Set title color to blue (you can adjust the color code) */
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator-container">
+  <h2>BMI Calculator</h2>
+  <form id="bmiForm">
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select class="form-control" id="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" class="form-control" id="weight" placeholder="Enter your weight" required>
+    </div>
+    <div class="form-group">
+      <label for="height">Height (cm):</label>
+      <input type="number" class="form-control" id="height" placeholder="Enter your height" required>
+    </div>
+    <button type="button" class="btn btn-primary btn-block" onclick="calculateBMI()">Calculate BMI</button>
+  </form>
+  <div id="result"></div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  function calculateBMI() {
+    // Get values from form
+    var gender = document.getElementById('gender').value;
+    var weight = document.getElementById('weight').value;
+    var height = document.getElementById('height').value;
+
+    // Calculate BMI
+    var bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+
+    // Display result
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = 'Your BMI is: ' + bmi;
+
+    // Additional feedback based on BMI value and gender
+    if (gender === 'male') {
+      if (bmi < 18.5) {
+        resultElement.innerHTML += ' - Underweight (Male)';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        resultElement.innerHTML += ' - Normal weight (Male)';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        resultElement.innerHTML += ' - Overweight (Male)';
+      } else {
+        resultElement.innerHTML += ' - Obesity (Male)';
+      }
+    } else if (gender === 'female') {
+      if (bmi < 18.5) {
+        resultElement.innerHTML += ' - Underweight (Female)';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        resultElement.innerHTML += ' - Normal weight (Female)';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        resultElement.innerHTML += ' - Overweight (Female)';
+      } else {
+        resultElement.innerHTML += ' - Obesity (Female)';
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

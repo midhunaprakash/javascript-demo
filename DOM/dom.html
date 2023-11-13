@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="head">DOM Manipulation</h1>
+    <ul>
+        <li class="cls">document.getElementById()</li>
+        <li>document.getElementsByClassName()</li>
+        <li class="cls">document.getElementsByTagName()</li>
+        <li>document.querySelector()</li>
+        <li class="cls">document.querySelectorAll()</li>
+</ul>
+
+<button onclick="buttonClick()">Click Me</button>
+
+<script>
+   
+
+    
+    //document.getElementById()
+    const documentId=document.getElementById("head")
+    console.log(documentId);
+    documentId.style.color="red"
+
+
+   // document.getElementsByClassName()
+   const documentClass=document.getElementsByClassName
+   ("cls")
+   console.log(documentClass);
+
+   //convert HTMLCollection into Array
+   console.log(Array.from(documentClass));
+   //Apply colors to the element
+   console.log(Array.from(documentClass).map((item)=>item.style.color="blue"));
+
+   //document.getElementsByTagName()
+   const documentTag=document.getElementsByTagName("li")
+   console.log(documentTag);
+   //convert HTMLCollection into an Array
+   console.log(...documentTag);
+   console.log([...documentTag].map((item)=>item.style.color="green"));
+   
+   //document.querySelector()
+   const query=document.querySelector("li")
+   console.log(query);
+   const query1=document.querySelectorAll("li")
+   console.log(query1);
+
+   const queryId=document.querySelector("#head")
+   console.log(queryId);
+
+   const querycls=document.querySelectorAll(".cls")
+   console.log(querycls);
+
+
+   function buttonClick(){
+        alert("you're hacked")
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+<body>
+    <h1 style="color: rgb(125, 27, 124);">DOM getElementsByTagName()</h1>
+
+
+    <p >This is the first paragraph</p>
+
+    <p >This is the second paragraph</p>
+
+
+    <p >This is the third  paragraph</p>
+
+    <button onclick="buttonClick()">Use Tag</button>
+
+
+    <script>
+
+        function buttonClick(){
+            var name=document.getElementsByTagName("p");
+        console.log(name);
+            
+
+
+        [...name].map(item=>{      // ( onnil kooduthal item ondankil  nammal {} bracket use cheyyum.)
+            item.style.color="red"
+            item.style.color="violet"
+        })
+
+        }
+    </script>
+
+
+
+</body>
+</html>

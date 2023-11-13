@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+</head>
+<body>
+    <table border="2" style="margin: 50px;">
+        <th>ID</th>
+        <th>Products</th>
+        <th>Action</th>
+        <tr>
+            <td>101</td>
+            <td><img src=" https://tse4.mm.bing.net/th?id=OIP.zdIFnnwQySS8Mka-XxnepQHaIG&pid=Api&P=0&h=180 " width="150px" height="150px" alt=""></td>
+            <td><button onclick="laconfirm()"><img src="https://tse2.mm.bing.net/th?id=OIP.ipCVlvK5J29C8IQig0cY2wHaHa&pid=Api&P=0&h=180 " width="50px" height="50px" alt=""></button></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td><img src="https://tse1.mm.bing.net/th?id=OIP.7DDxz0a0PxqfwBDdgjPjcwHaEo&pid=Api&P=0&h=180 " width="150px" height="150px" alt=""></td>
+            <td><button onclick="laconfirm()"><img src="https://tse2.mm.bing.net/th?id=OIP.ipCVlvK5J29C8IQig0cY2wHaHa&pid=Api&P=0&h=180 " width="50px" height="50px" alt=""></button></td>
+        </tr>
+        <script>
+            function laconfirm(){
+                const task=confirm("Are you sure you want to perform this action?");
+                if(task==true){
+                    console.log("User confirmed the action");
+                }
+                else{
+                    console.log("User cancelled the action");
+                }
+            }
+        </script>
+        
+
+    </table>
+    
+</body>
+</html>
